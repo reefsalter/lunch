@@ -72,11 +72,11 @@
   <script>
     // List of places for lunch
     let places = [
-      "Restaurant A",
-      "Cafe B",
-      "Pizzeria C",
-      "Food Truck D",
-      "Diner E"
+      "Greggs",
+      "Oodles Noodles",
+      "Bombay Bites",
+      "Pret",
+      "Tim Horton's"
       // Add more places as needed
     ];
 
@@ -86,7 +86,7 @@
       dropdownMenu.innerHTML = "";
       places.forEach((place, index) => {
         const excluded = place.startsWith("[Excluded]");
-        dropdownMenu.innerHTML += `<li><a class="dropdown-item ${excluded ? 'excluded' : ''}" href="#" onclick="togglePlace(${index})">${place.replace("[Excluded]", "")}</a></li>`;
+        dropdownMenu.innerHTML += `<li><a class="dropdown-item ${excluded ? 'excluded' : ''}" href="#" onclick="togglePlace(${index}); return false;">${place.replace("[Excluded]", "")}</a></li>`;
       });
     }
 
